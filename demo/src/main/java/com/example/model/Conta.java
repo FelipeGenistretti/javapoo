@@ -17,29 +17,29 @@ public class Conta {
     private double tarifaMensal;
     private double limiteChequeEspecial;
 
+   
+
+    public Conta(Titular titular, int agencia, int numero) {
+        this.titular = titular;
+        this.agencia = agencia;
+        this.numero = numero;
+    }
+
+
     public Titular getTitular() {
         return titular;
     }
 
-    public void setTitular(Titular titular) {
-        this.titular = titular;
-    }
 
     public int getAgencia() {
         return agencia;
     }
 
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
-    }
 
     public int getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
 
     public double getSaldo() {
         return saldo;
