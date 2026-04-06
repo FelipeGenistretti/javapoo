@@ -1,21 +1,32 @@
 package com.example;
 
 import com.example.enums.TipoConta;
+import com.example.model.CaixaEletronico;
 import com.example.model.Conta;
+import com.example.model.ContaEspecial;
 import com.example.model.Titular;
 import com.example.model.ValueObjects.Cpf;
 
+import javax.accessibility.AccessibleAction;
+
 public class Main {
     public static void main(String[] args) {
-        Titular titular = new Titular("João da Silva", "12312312300");
-        Conta conta1 = new Conta(titular, 1234, 999999);
+        CaixaEletronico caixaEletronico = new CaixaEletronico();
 
-        conta1.imprimirDemonstrativo();
+        Titular titularJoao = new Titular("João da Silva", "12312312300");
+        Titular titularAna = new Titular("Ana da Silva", "12312312377");
 
-        conta1.depositar(100);
-        conta1.imprimirDemonstrativo();
+        ContaEspecial conta1 = new ContaEspecial(titularJoao, 1234, 999999, 90);
+        conta1.setLimiteChequeEspecial(1000);
 
-        conta1.sacar(27.5);
-        conta1.imprimirDemonstrativo();
+        ContaEspecial conta2 = new ContaEspecial(titularAna, 2222, 888888, 90);
+        conta2.setLimiteChequeEspecial(1000);
+
+        conta1.depositar(300);
+
+        caixaEletronico.transferir(conta1, conta2, 400);
+
+
+
     }
 } 
