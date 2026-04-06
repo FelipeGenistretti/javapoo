@@ -27,6 +27,10 @@ public class ContaInvestimento extends Conta{
         }
     }
 
-    
-
+    @Override
+    public String toString() {
+        return "ContaInvestimento{" +
+                "valorTotalRendimentos=" + valorTotalRendimentos +
+                '}' + super.toString();
+    }
 }

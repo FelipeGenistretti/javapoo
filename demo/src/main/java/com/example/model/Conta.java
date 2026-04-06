@@ -128,4 +128,9 @@ public class Conta {
         System.out.printf("Titular: %s%n", titular.getNome());
         System.out.printf("Saldo: %.2f%n", saldo);
     }
+
+    @Override
+    public String toString() {
+        return String.format("Conta(titular=%s, agencia=%d, numero=%d)", titular.getNome(), agencia, numero);
+    }
 }
